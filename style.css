@@ -3,18 +3,19 @@
     --magic-cyan: #00FFFF;
     --deep-navy: #0A1128;
     --text-white: #FFFFFF;
+    --accent-red: #FF4081;
+    --card-bg: rgba(255, 255, 255, 0.05);
 }
 
 body {
     margin: 0;
     padding: 0;
-    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    font-family: "Zen Kaku Gothic New", "Helvetica Neue", Arial, sans-serif;
     color: var(--text-white);
     background-color: var(--deep-navy);
     overflow-x: hidden;
-    height: 100vh;
     width: 100vw;
-    position: relative;
+    line-height: 1.6;
 }
 
 /* Background Handling */
@@ -25,10 +26,8 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    /* Default gradient if image fails */
     background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-    /* Image will be inserted via style attribute or separate class if generated */
-    background-image: url('assets/hero_bg.png'); 
+    background-image: url('assets/hero_bg.png');
     background-size: cover;
     background-position: center;
     z-index: -2;
@@ -40,29 +39,55 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.6) 100%),
-                linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.8) 100%);
+    background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.8) 100%),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.9) 100%);
     z-index: -1;
-    /* Add subtle grid overlay for "Cyber/Status Screen" feel */
-    background-image: 
+    background-image:
         linear-gradient(rgba(0, 255, 255, 0.05) 1px, transparent 1px),
         linear-gradient(90deg, rgba(0, 255, 255, 0.05) 1px, transparent 1px);
     background-size: 50px 50px;
 }
 
-/* Typography & Layout */
+/* Common Layout */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section {
+    padding: 80px 0;
+    position: relative;
+}
+
+.section-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-bottom: 2px solid var(--magic-cyan);
+    display: inline-block;
+    padding-bottom: 10px;
+    left: 50%;
+    position: relative;
+    transform: translateX(-50%);
+}
+
+/* Hero Section */
 .hero {
-    height: 100%;
+    height: 100vh;
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center;     /* Center vertically */
+    justify-content: center;
+    align-items: center;
+    position: relative;
     padding: 2rem;
     box-sizing: border-box;
 }
 
 .hero-content {
     display: flex;
-    flex-direction: row-reverse; /* Text on right (vertical), info on left */
+    flex-direction: row-reverse;
     align-items: center;
     justify-content: center;
     gap: 4rem;
@@ -70,24 +95,18 @@ body::before {
     width: 100%;
 }
 
-/* Vertical Japanese Text */
 .vertical-text {
     writing-mode: vertical-rl;
-    font-family: 'Noto Serif JP', 'Shippori Mincho', serif;
+    font-family: 'Noto Serif JP', serif;
     font-weight: 900;
     line-height: 1.8;
     letter-spacing: 0.1em;
-    font-size: clamp(2rem, 5vw, 4rem);
-    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 2px 2px 0px rgba(0,0,0,0.5);
-    height: 60vh; /* Adjust based on text length */
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 2px 2px 0px rgba(0, 0, 0, 0.5);
+    height: 60vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
-
-.line {
-    display: block;
-    margin-left: 1rem;
 }
 
 .line-1 {
@@ -96,7 +115,6 @@ body::before {
 
 .line-2 {
     color: var(--magic-cyan);
-    position: relative;
 }
 
 .small-note {
@@ -104,53 +122,41 @@ body::before {
     vertical-align: text-top;
 }
 
-/* App Info Section */
 .app-info {
-    text-align: center; /* Center align properly */
+    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(10px);
     padding: 3rem;
     border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     box-shadow: 0 0 30px rgba(0, 255, 255, 0.1);
+    max-width: 500px;
 }
 
-.catchphrase {
-    font-size: 1.2rem;
-    letter-spacing: 0.2em;
-    margin-bottom: 2rem;
-    color: #ccc;
-    text-transform: uppercase;
-}
-
-.logo-area {
-    margin-bottom: 3rem;
-}
-
-.app-name-en {
-    display: block;
-    font-size: 3rem;
-    font-weight: bold;
-    font-family: 'Arial Black', sans-serif;
-    letter-spacing: -0.05em;
-    /* Gradient Text */
+.app-full-name {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 1.5rem;
+    line-height: 1.6;
+    margin: 0 0 1.5rem 0;
     background: linear-gradient(45deg, #fff, #00AEEF);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    font-weight: 800;
 }
 
-.app-name-jp {
-    display: block;
-    font-size: 1.5rem;
-    letter-spacing: 0.5em;
-    margin-top: 0.5rem;
-    opacity: 0.9;
+.catchphrase {
+    font-size: 1rem;
+    letter-spacing: 0.2em;
+    margin-bottom: 2rem;
+    color: #dedede;
+    text-transform: uppercase;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-weight: 700;
 }
 
-/* Download Button */
 .download-area {
     margin-bottom: 1rem;
     transition: transform 0.2s;
@@ -161,47 +167,172 @@ body::before {
 }
 
 .app-store-btn svg {
-    display: none; /* Hide SVG if using image */
+    display: none;
 }
 
 .badge-img {
     height: 60px;
     width: auto;
-    display: block;
 }
 
 .os-note {
     font-size: 0.8rem;
-    color: #888;
+    color: #aaa;
 }
 
-footer {
+.scroll-indicator {
     position: absolute;
-    bottom: 1rem;
-    width: 100%;
-    text-align: center;
-    font-size: 0.7rem;
-    opacity: 0.5;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    opacity: 0.7;
 }
 
-/* Mobile Responsiveness */
+.scroll-indicator span {
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+}
+
+.scroll-indicator .line {
+    width: 1px;
+    height: 50px;
+    background: var(--text-white);
+}
+
+/* Problem Section */
+.problem-section {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.problem-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.problem-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid rgba(255, 64, 129, 0.3);
+    transition: transform 0.3s;
+}
+
+.problem-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-red);
+}
+
+.problem-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.problem-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0;
+    color: #ffbcbc;
+}
+
+.problem-summary {
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 2;
+    font-weight: bold;
+}
+
+/* Solution Section */
+.solution-section {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 40, 80, 0.8));
+}
+
+.solution-text {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+}
+
+.feature-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.feature-item {
+    background: rgba(0, 174, 239, 0.1);
+    padding: 2rem;
+    border-radius: 10px;
+    border-left: 5px solid var(--primary-blue);
+}
+
+.feature-item h3 {
+    margin-top: 0;
+    color: var(--magic-cyan);
+    font-family: 'Teko', sans-serif;
+    /* Fallback if not loaded, sticking to sans */
+    font-size: 1.5rem;
+}
+
+.feature-item p {
+    margin: 0;
+}
+
+/* Footer CTA */
+.footer-cta {
+    padding: 100px 0;
+    text-align: center;
+    background: linear-gradient(to top, #000, rgba(0, 0, 0, 0.8));
+}
+
+.footer-cta h2 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.copyright {
+    margin-top: 3rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+/* Mobile */
 @media (max-width: 768px) {
     .hero-content {
-        flex-direction: column; /* Stack vertically on mobile */
+        flex-direction: column;
         gap: 2rem;
     }
 
     .vertical-text {
-        writing-mode: horizontal-tb; /* Horizontal on mobile for readability? Or keep vertical? */
-        /* Let's keep vertical for style if space allows, but usually horizontal is safer for catchy LPs on mobile */
-        writing-mode: vertical-rl; 
-        font-size: 2.5rem;
-        height: 40vh;
-        margin-bottom: 0;
+        height: auto;
+        writing-mode: horizontal-tb;
+        font-size: 1.8rem;
+        text-align: center;
+        margin-bottom: 1rem;
     }
-    
+
+    .line {
+        display: inline-block;
+        margin: 0;
+    }
+
     .app-info {
-        padding: 2rem;
-        width: 80%;
+        width: 100%;
+        padding: 2rem 1rem;
+        box-sizing: border-box;
+    }
+
+    .section {
+        padding: 60px 0;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
     }
 }

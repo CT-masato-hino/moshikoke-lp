@@ -1,22 +1,35 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" prefix="og: http://ogp.me/ns#">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moshikoke | もしこけ - AI動画解析アプリ</title>
-    <meta name="description" content="転ばぬ先の杖は、アプリにあった。AIがあなたの受身フォームを解析し、スコア化する次世代トレーニングアプリ。">
+    <title>もしも最初のスノーボードで転けずに滑れるようになれたら | AI動画解析アプリ</title>
+    <meta name="description" content="スノボ初心者のための「転ばない」トレーニングアプリ。AIがあなたの滑りを解析し、重心位置やフォームを可視化。痛い思いをせずに、最短で上達しよう。">
+
+    <!-- SEO / OGP -->
+    <meta property="og:title" content="もしも最初のスノーボードで転けずに滑れるようになれたら">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://moshikoke.app/">
+    <meta property="og:image" content="https://moshikoke.app/og-image.png"> <!-- Placeholder -->
+    <meta property="og:description" content="AI動画解析で、あなたのスノーボードが変わる。転ばないコツを最短で。">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://moshikoke.app/">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@700;900&family=Shippori+Mincho:wght@800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@700;900&family=Shippori+Mincho:wght@800&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div class="bg-overlay"></div>
-    <main class="hero">
+
+    <!-- Hero Section -->
+    <header class="hero">
         <div class="hero-content">
             <h1 class="vertical-text">
                 <span class="line line-1">転ばぬ先の杖は、</span>
@@ -24,17 +37,15 @@
             </h1>
 
             <div class="app-info">
-                <p class="catchphrase">AI動画解析 × 受身トレーニング</p>
                 <div class="logo-area">
-                    <span class="app-name-en">Moshikoke</span>
-                    <span class="app-name-jp">もしこけ</span>
+                    <h2 class="app-full-name">もしも最初のスノーボードで<br>転けずに滑れるようになれたら</h2>
                 </div>
+
+                <p class="catchphrase">AI動画解析 × 受身トレーニング</p>
 
                 <div class="download-area">
                     <a href="https://apps.apple.com/jp/app/id6757433934" class="app-store-btn" target="_blank">
-                        <!-- Standard SVG for App Store Badge -->
                         <svg viewBox="0 0 120 40" height="60" width="180">
-                            <!-- Placeholder for actual badge image, using CSS styled button for now -->
                             <rect width="120" height="40" rx="5" fill="black" />
                             <text x="60" y="25" font-family="sans-serif" font-size="14" fill="white"
                                 text-anchor="middle" font-weight="bold">Download on the App Store</text>
@@ -43,12 +54,82 @@
                             alt="Download on the App Store" class="badge-img">
                     </a>
                 </div>
-                <p class="os-note">※ iOS専用 / Android版は未定です</p>
+                <p class="os-note">※ iOS専用 / iPhone対応</p>
             </div>
         </div>
-    </main>
-    <footer>
-        <p>&copy; 2026 Moshikoke Project. All Rights Reserved.</p>
+        <div class="scroll-indicator">
+            <span>SCROLL</span>
+            <div class="line"></div>
+        </div>
+    </header>
+
+    <!-- Problem Section -->
+    <section class="section problem-section">
+        <div class="container">
+            <h2 class="section-title">こんな経験ありませんか？</h2>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">💥</div>
+                    <h3>初日はお尻が痛くて<br>座るのも辛い</h3>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">😨</div>
+                    <h3>逆エッジが怖くて<br>ターンができない</h3>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">🥶</div>
+                    <h3>転んでばかりで<br>濡れて寒い</h3>
+                </div>
+            </div>
+            <p class="problem-summary">
+                スノーボードは楽しいスポーツですが、<br>
+                最初の「転ぶ痛み」で挫折してしまう人が多すぎます。
+            </p>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="section solution-section">
+        <div class="container">
+            <h2 class="section-title">AIが教える「転ばない魔法」</h2>
+            <p class="solution-text">
+                「もしも最初のスノーボードで転けずに滑れるようになれたら」は、<br>
+                あなたの滑りをAIが解析し、<strong>重心の位置</strong>や<strong>フォームの崩れ</strong>を可視化します。
+            </p>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h3>01. 動画を撮るだけ</h3>
+                    <p>友達に滑りを撮ってもらい、アプリにアップロードするだけ。</p>
+                </div>
+                <div class="feature-item">
+                    <h3>02. AI重心解析</h3>
+                    <p>骨格検知AIが、あなたの重心がどこにあるかをフレーム単位で分析。</p>
+                </div>
+                <div class="feature-item">
+                    <h3>03. 改善点が見える</h3>
+                    <p>「なぜ転んだのか」「どうすれば立てるのか」が、明確な数値と視覚情報でわかります。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <footer class="footer-cta">
+        <div class="container">
+            <h2>さあ、痛み知らずのゲレンデへ。</h2>
+            <div class="download-area">
+                <a href="https://apps.apple.com/jp/app/id6757433934" class="app-store-btn" target="_blank">
+                    <svg viewBox="0 0 120 40" height="60" width="180">
+                        <rect width="120" height="40" rx="5" fill="black" />
+                        <text x="60" y="25" font-family="sans-serif" font-size="14" fill="white" text-anchor="middle"
+                            font-weight="bold">Download on the App Store</text>
+                    </svg>
+                    <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/ja-jp?size=250x83&amp;releaseDate=1600000000"
+                        alt="Download on the App Store" class="badge-img">
+                </a>
+            </div>
+            <p class="copyright">&copy; 2026 Chapter Tech LLC. All Rights Reserved.</p>
+        </div>
     </footer>
 </body>
 
