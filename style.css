@@ -117,9 +117,9 @@ body::before {
     font-weight: 900;
     line-height: 1.8;
     letter-spacing: 0.1em;
-    font-size: clamp(2rem, 4vw, 3.5rem);
     text-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 2px 2px 0px rgba(0, 0, 0, 0.5);
-    height: 60vh;
+    min-height: 60vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -345,12 +345,12 @@ body::before {
         writing-mode: horizontal-tb;
         font-size: 1.8rem;
         text-align: center;
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
     }
 
     .line {
-        display: inline-block;
-        margin: 0;
+        display: block;
+        margin: 0.5rem 0;
     }
 
     .app-info {
