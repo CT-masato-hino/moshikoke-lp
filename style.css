@@ -192,6 +192,7 @@ body::before {
 
 .app-store-btn svg {
     display: none;
+    /* Hide SVG if using image */
 }
 
 .badge-img {
