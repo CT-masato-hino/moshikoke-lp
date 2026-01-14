@@ -366,4 +366,8 @@ body::before {
     .section-title {
         font-size: 1.5rem;
     }
+
+    .app-full-name {
+        font-size: 1.3rem;
+    }
 }
