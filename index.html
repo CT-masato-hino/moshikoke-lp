@@ -4,37 +4,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moshikoke - もしこけ</title>
-    <style>
-        body {
-            font-family: sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
-        }
-
-        .container {
-            text-align: center;
-            padding: 2rem;
-            background: white;
-            border-radius: 1rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            color: #333;
-        }
-    </style>
+    <title>Moshikoke | もしこけ - AI動画解析アプリ</title>
+    <meta name="description" content="転ばぬ先の杖は、アプリにあった。AIがあなたの受身フォームを解析し、スコア化する次世代トレーニングアプリ。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@700;900&family=Shippori+Mincho:wght@800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="container">
-        <h1>Moshikoke</h1>
-        <p>Coming Soon...</p>
-    </div>
+    <div class="bg-overlay"></div>
+    <main class="hero">
+        <div class="hero-content">
+            <h1 class="vertical-text">
+                <span class="line line-1">転ばぬ先の杖は、</span>
+                <span class="line line-2">異世界<span class="small-note">（アプリ）</span>にあった。</span>
+            </h1>
+
+            <div class="app-info">
+                <p class="catchphrase">AI動画解析 × 受身トレーニング</p>
+                <div class="logo-area">
+                    <span class="app-name-en">Moshikoke</span>
+                    <span class="app-name-jp">もしこけ</span>
+                </div>
+
+                <div class="download-area">
+                    <a href="https://apps.apple.com/jp/app/id6739666795" class="app-store-btn" target="_blank">
+                        <!-- Standard SVG for App Store Badge -->
+                        <svg viewBox="0 0 120 40" height="60" width="180">
+                            <!-- Placeholder for actual badge image, using CSS styled button for now -->
+                            <rect width="120" height="40" rx="5" fill="black" />
+                            <text x="60" y="25" font-family="sans-serif" font-size="14" fill="white"
+                                text-anchor="middle" font-weight="bold">Download on the App Store</text>
+                        </svg>
+                        <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/ja-jp?size=250x83&amp;releaseDate=1600000000"
+                            alt="Download on the App Store" class="badge-img">
+                    </a>
+                </div>
+                <p class="os-note">※ iOS専用 / Android版は未定です</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2026 Moshikoke Project. All Rights Reserved.</p>
+    </footer>
 </body>
 
 </html>
