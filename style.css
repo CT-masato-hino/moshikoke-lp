@@ -61,6 +61,7 @@ body::before {
         cover,
         cover;
     background-attachment: fixed;
+    z-index: -2;
 }
 
 /* Common Layout */
@@ -316,6 +317,8 @@ body::before {
     padding: 100px 0;
     text-align: center;
     background: linear-gradient(to top, #000, rgba(0, 0, 0, 0.8));
+    position: relative;
+    z-index: 1;
 }
 
 .footer-cta h2 {
